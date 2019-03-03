@@ -11,6 +11,6 @@
     <title>Home</title>
 </head>
 <body>
-    Hello world!!!
+    ${msg}
 </body>
 </html>
