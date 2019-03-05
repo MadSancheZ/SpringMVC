@@ -1,9 +1,12 @@
 package org.madsanchez.model;
 
+import org.springframework.stereotype.Component;
+
+
 public class User {
-    private final String name;
-    private final String surname;
-    private final String email;
+    private String name;
+    private String surname;
+    private String email;
 
     public User(String name, String surname, String email) {
         this.name = name;
@@ -21,5 +24,20 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public User() {
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
