@@ -1,20 +1,23 @@
 package org.madsanchez;
 
 
+import org.madsanchez.dao.UserDAO;
 import org.madsanchez.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.sql.SQLException;
 
 @Controller
 public class MainController {
-    private List<User> users = new ArrayList<>();
+
+
+    @Autowired
+    private UserDAO userDAO;
 
 
     @GetMapping("/view/{name}")
@@ -24,9 +27,9 @@ public class MainController {
     }
 
     @GetMapping("/users")
-    public String getUsers(Model model){
+    public String getUsers(Model model) throws SQLException {
 
-        model.addAttribute("users", users);
+        model.addAttribute("users", userDAO.getAll());
         return "users";
     }
 
@@ -41,7 +44,7 @@ public class MainController {
         if(result.hasErrors()){
             return "/sign_up";
         }
-        users.add(user);
+//        users.add(user);
         return "redirect:/users";
     }
 }
