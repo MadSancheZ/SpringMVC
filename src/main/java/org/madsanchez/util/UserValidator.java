@@ -3,12 +3,15 @@ package org.madsanchez.util;
 import org.madsanchez.dao.UserDAO;
 import org.madsanchez.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import java.sql.SQLException;
 
+@Component
 public class UserValidator implements Validator {
+
     @Autowired
     private UserDAO userDAO;
 
