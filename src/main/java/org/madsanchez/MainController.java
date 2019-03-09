@@ -5,19 +5,20 @@ import org.madsanchez.dao.UserDAO;
 import org.madsanchez.model.User;
 import org.madsanchez.util.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.sql.SQLException;
 
 @Controller
 public class MainController {
 
 
     @Autowired
+    @Qualifier("hibernateUserDAO")
     private UserDAO userDAO;
 
     @Autowired
@@ -44,7 +45,7 @@ public class MainController {
     }
 
     @PostMapping("/users/new")
-    public String signUp(@ModelAttribute @Valid User user, BindingResult result){
+    public String signUp(@ModelAttribute @Valid User user, BindingResult result) {
         userValidator.validate(user, result);
         if(result.hasErrors()){
             return "/sign_up";

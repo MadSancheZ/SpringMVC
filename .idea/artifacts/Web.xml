@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="Web">
+    <output-path>$PROJECT_DIR$/out/artifacts/Web</output-path>
+    <root id="root">
+      <element id="module-output" name="SpringMVC" />
+      <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.18.RELEASE" />
+      <element id="library" level="project" name="Maven: javax.persistence:javax.persistence-api:2.2" />
+    </root>
+  </artifact>
+</component>
