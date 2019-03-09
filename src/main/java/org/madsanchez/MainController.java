@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class MainController {
@@ -44,7 +46,7 @@ public class MainController {
         if(result.hasErrors()){
             return "/sign_up";
         }
-//        users.add(user);
+        userDAO.add(user);
         return "redirect:/users";
     }
 }
