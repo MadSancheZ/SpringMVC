@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 
 @Controller
 public class MainController {
@@ -29,7 +27,7 @@ public class MainController {
     }
 
     @GetMapping("/users")
-    public String getUsers(Model model) throws SQLException {
+    public String getUsers(Model model) {
 
         model.addAttribute("users", userDAO.getAll());
         return "users";

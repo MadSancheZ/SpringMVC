@@ -21,7 +21,7 @@ public class UserDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<User> getAll() throws SQLException {
+    public List<User> getAll() {
         return jdbcTemplate.query("select * from users",
                 new BeanPropertyRowMapper<>(User.class));
     }
