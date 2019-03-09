@@ -3,6 +3,7 @@ package org.madsanchez;
 
 import org.madsanchez.dao.UserDAO;
 import org.madsanchez.model.User;
+import org.madsanchez.util.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,9 @@ public class MainController {
 
     @Autowired
     private UserDAO userDAO;
+
+    @Autowired
+    private UserValidator userValidator;
 
 
     @GetMapping("/view/{name}")
@@ -41,6 +45,7 @@ public class MainController {
 
     @PostMapping("/users/new")
     public String signUp(@ModelAttribute @Valid User user, BindingResult result){
+        userValidator.validate(user, result);
         if(result.hasErrors()){
             return "/sign_up";
         }
