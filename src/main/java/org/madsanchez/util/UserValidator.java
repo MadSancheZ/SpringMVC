@@ -13,7 +13,7 @@ import org.springframework.validation.Validator;
 public class UserValidator implements Validator {
 
     @Autowired
-    @Qualifier("hibernateUserDAO")
+    @Qualifier("jpaUserDAO")
     private UserDAO userDAO;
 
     @Override

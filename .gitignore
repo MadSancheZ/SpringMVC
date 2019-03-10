@@ -1,4 +1,4 @@
-
+alias last=git log --graph --all --online --decorate
 target/
 *.iml
 *.properties

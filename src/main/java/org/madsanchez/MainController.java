@@ -18,7 +18,7 @@ public class MainController {
 
 
     @Autowired
-    @Qualifier("hibernateUserDAO")
+    @Qualifier("jpaUserDAO")
     private UserDAO userDAO;
 
     @Autowired
