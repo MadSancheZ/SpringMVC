@@ -1,8 +1,9 @@
-package org.madsanchez;
+package org.madsanchez.controller;
 
 
 import org.madsanchez.dao.UserDAO;
 import org.madsanchez.model.User;
+import org.madsanchez.service.UserService;
 import org.madsanchez.util.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,8 +19,7 @@ public class MainController {
 
 
     @Autowired
-    @Qualifier("jpaUserDAO")
-    private UserDAO userDAO;
+    private UserService userService;
 
     @Autowired
     private UserValidator userValidator;
@@ -34,7 +34,7 @@ public class MainController {
     @GetMapping("/users")
     public String getUsers(Model model) {
 
-        model.addAttribute("users", userDAO.getAll());
+        model.addAttribute("users", userService.getAll());
         return "users";
     }
 
@@ -50,7 +50,7 @@ public class MainController {
         if(result.hasErrors()){
             return "/sign_up";
         }
-        userDAO.add(user);
+        userService.add(user);
         return "redirect:/users";
     }
 }

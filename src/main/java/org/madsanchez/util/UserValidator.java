@@ -2,6 +2,7 @@ package org.madsanchez.util;
 
 import org.madsanchez.dao.UserDAO;
 import org.madsanchez.model.User;
+import org.madsanchez.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -13,8 +14,7 @@ import org.springframework.validation.Validator;
 public class UserValidator implements Validator {
 
     @Autowired
-    @Qualifier("jpaUserDAO")
-    private UserDAO userDAO;
+    private UserService userService;
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -24,7 +24,7 @@ public class UserValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         User user = (User) target;
-        if (userDAO.getOne(user.getEmail()) != null) {
+        if (userService.getOne(user.getEmail()) != null) {
             errors.rejectValue(
                     "email", "", "This email is already in use");
         }
