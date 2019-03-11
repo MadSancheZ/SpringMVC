@@ -38,19 +38,9 @@ public class MainController {
         return "users";
     }
 
-    @GetMapping("/users/new")
-    public String setUpUser(Model model){
-        model.addAttribute("user", new User());
-        return "/sign_up";
+    @GetMapping("/")
+    public String home(){
+        return "index";
     }
 
-    @PostMapping("/users/new")
-    public String signUp(@ModelAttribute @Valid User user, BindingResult result) {
-        userValidator.validate(user, result);
-        if(result.hasErrors()){
-            return "/sign_up";
-        }
-        userService.add(user);
-        return "redirect:/users";
-    }
 }

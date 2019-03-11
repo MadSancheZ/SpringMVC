@@ -27,10 +27,15 @@ public class User {
     @Email
     private String email;
 
-    public User(String name, String surname, String email) {
+    @Column
+    @Size(min = 7, max = 20, message = "The password must be more than 7 chars and less 20 chars size")
+    private String password;
+
+    public User(String name, String surname, String email, String password) {
         this.name = name;
         this.surname = surname;
         this.email = email;
+        this.password = password;
     }
 
     public String getName() {
@@ -43,6 +48,10 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public User() {
@@ -66,5 +75,9 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
