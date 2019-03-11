@@ -20,17 +20,17 @@ public class JdbcApiUserDAO implements UserDAO {
         String url = null;
         String username = null;
 
-        try (InputStream input = JdbcApiUserDAO.class.getClassLoader()
-                .getResourceAsStream("persistence.properties")) {
+//        try (InputStream input = JdbcApiUserDAO.class.getClassLoader()
+//                .getResourceAsStream("persistence.properties")) {
 
 //            Properties props = new Properties();
 //            props.load(input);
 //            url = props.getProperty("url");
 //            username = props.getProperty("username");
 //            System.out.println(url+" "+username);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         try {
             Class.forName("org.postgresql.Driver");
