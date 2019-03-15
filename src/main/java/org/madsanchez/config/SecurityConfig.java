@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-@ComponentScan("org.madsanchez.security")
+@ComponentScan("org.madsanchez")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
