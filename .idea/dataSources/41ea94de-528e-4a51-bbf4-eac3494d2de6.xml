@@ -9,10 +9,10 @@
       <Comment>for users</Comment>
       <StateNumber>573</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>604</IntrospectionStateNumber>
+      <IntrospectionStateNumber>633</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
-      <Relations>sequence|table|16417|16419|1
+      <Relations>sequence|table|24630|24632|1
 </Relations>
     </database>
     <database id="3" parent="1" name="newBD">
@@ -109,7 +109,7 @@
       <Comment>standard public schema</Comment>
       <StateNumber>359</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>605</IntrospectionStateNumber>
+      <IntrospectionStateNumber>634</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -170,23 +170,23 @@
       <SchemaId>11</SchemaId>
     </extension>
     <sequence id="27" parent="19" name="users_id_seq">
-      <ObjectId>16417</ObjectId>
+      <ObjectId>24630</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>603</StateNumber>
+      <StateNumber>630</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
     <table id="28" parent="19" name="users">
-      <ObjectId>16419</ObjectId>
+      <ObjectId>24632</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>603</StateNumber>
+      <StateNumber>630</StateNumber>
     </table>
     <column id="29" parent="28" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>603</StateNumber>
+      <StateNumber>630</StateNumber>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -194,38 +194,39 @@
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>603</StateNumber>
+      <StateNumber>630</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="31" parent="28" name="surname">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>603</StateNumber>
+      <StateNumber>630</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="32" parent="28" name="email">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>603</StateNumber>
+      <StateNumber>630</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="33" parent="28" name="password">
       <Position>5</Position>
-      <DataType>varchar(100)|0s</DataType>
-      <StateNumber>603</StateNumber>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>630</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="34" parent="28" name="users_pkey">
-      <ObjectId>16423</ObjectId>
-      <StateNumber>603</StateNumber>
+      <ObjectId>24639</ObjectId>
+      <StateNumber>630</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="35" parent="28" name="users_pkey">
-      <ObjectId>16424</ObjectId>
-      <StateNumber>603</StateNumber>
+      <ObjectId>24640</ObjectId>
+      <StateNumber>630</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>

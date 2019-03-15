@@ -35,12 +35,12 @@ public class MainController {
     public String getUsers(Model model) {
 
         model.addAttribute("users", userService.getAll());
-        return "users";
+        return "/users";
     }
 
     @GetMapping("/")
     public String home(){
-        return "index";
+        return "redirect:/users";
     }
 
 }
