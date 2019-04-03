@@ -5,6 +5,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -12,7 +13,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column
     @NotBlank(message = "Name is required")
@@ -30,6 +31,7 @@ public class User {
     @Column
     @Size(min = 7, message = "The password must be more than 7 chars size")
     private String password;
+
 
     public User(String name, String surname, String email, String password) {
         this.name = name;
@@ -80,4 +82,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

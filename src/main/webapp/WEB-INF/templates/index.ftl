@@ -1,8 +1,7 @@
-<html>
-<head>
-    <title>Home</title>
-</head>
-<body>
-    Привет
-</body>
-</html>
+<#include "main-template.ftl"/>
+
+<#macro content>
+    ${msg}
+</#macro>
+
+<@main title="Home"/>
